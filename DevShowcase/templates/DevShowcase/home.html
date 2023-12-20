@@ -1,0 +1,206 @@
+{% extends 'DevShowcase/base.html' %}
+
+{% block title %}Carlos Villa - Developer Showcase{% endblock %}
+
+{% block content %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Home Section -->
+    <section id="home-section" class="home-section">
+        <h1 id="main-title" class="main-title">
+            Developer Showcase: <p class="highlighted-name">Carlos Villa</p>
+        </h1>
+        <!-- Additional homepage content here -->
+    </section>
+
+    <div style="padding: 10px;">
+    <!-- About Me Section -->
+    <section id="about-section" class="about-section">
+        <div class="about-text">
+            <h2>About Me</h2>
+            <p>
+                I am a passionate Professor and Coordinator at Facultad de Ciencias de la Cultura Física, Universidad Autónoma de Chihuahua, where I teach English and Computer Science. My focus is not only on imparting knowledge but also on inspiring and guiding students and other professors in their academic and professional journeys. As a Full Stack Web Developer, I blend technical expertise with educational insights to create engaging and effective learning experiences.
+            </p>
+                <!-- Skills Section -->
+            <h3>Skills</h3>
+            <ul>
+                <li>Web Development (Django, Node.js, React, Flask, Python, JavaScript, JSX, HTML, CSS, SQL).</li>
+                <li>AI & Deep Learning (TensorFlow, Keras, scikit-learn, nltk, pandas, numpy, pyautogui).</li>
+                <li>Game Development (LÖVE, Lua, Unity, C#).</li>
+                <!-- More skills -->
+            </ul>
+                <!-- Tools Section -->
+            <h3>Tools</h3>
+            <ul>
+                <li>IDEs: Visual Studio Code (VSCode), CS50 IDE (based on Cloud9), IDLE, Notepad.</li>
+                <li>Replit</li>
+                <li>GitHub</li>
+                <!-- More tools -->
+            </ul>
+        </div>
+        <div class="about-image-container">
+            <img src="{% static 'programming.png' %}" alt="Carlos Villa" class="about-image">
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education-section" class="education-section">
+        <div class="education-image-container">
+            <img src="{% static 'utepcv.jpg' %}" alt="UTEP" class="education-image">
+        </div>
+        <div class="education-content">
+            <h2>Education</h2>
+            <p>
+                Ever since I was young, I've been the computer guy in my family. Often called upon to fix the family computer, I was likely the one who caused the issues in the first place (lol). While my early career took a turn towards management and political science, it was always my passion for computers that set me apart. Today, I've fully embraced this lifelong passion professionally, marrying my leadership abilities with my love for computer science.
+            </p>
+        </div>
+    </section>
+
+            <!-- Certifications Section -->
+            <section id="certifications-section" class="certifications-section">
+            <div class="certifications-title-container">
+                <h3 class="certifications-title">Certifications</h3>
+            </div>
+            <div class="certifications">
+                <!-- ... certification columns ... -->
+                <div class="certification-col">
+                    <div class="certification-logo-container">
+                        <img src="{% static 'UBCxjpeg.jpg' %}" alt="UBCx" class="certification-logo ubcx-logo">
+                    </div>
+                    <div class="certification-text">
+                        <ul>
+                            <li>• Online Teaching for Educators: Development and Delivery</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="certification-col" id="harvardx-col">
+                    <div class="certification-logo-container">
+                        <img src="{% static 'harvardxjpeg.jpg' %}" alt="HarvardX" class="certification-logo harvardx-logo">
+                    </div>
+                    <div class="certification-text">
+                        <ul>
+                            <li>• Computer Science for Web Programming</li>
+                            <li>• Computer Science for Artificial Intelligence</li>
+                            <li>• Computer Science for Game Development</li>
+                            <li>• Introduction to Cybersecurity</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="certification-col">
+                    <div class="certification-logo-container">
+                        <img src="{% static 'DelftXjpeg.jpg' %}" alt="DelftX" class="certification-logo delftx-logo">
+                    </div>
+                    <div class="certification-text">
+                        <ul>
+                            <li>• The Economics of Energy Transition</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>            
+        </section>
+
+    <!-- Experience Text Section -->
+    <section id="experience-text-section" class="experience-text-section">
+        <h2>Experience</h2>
+        <div class="experience-content">
+            <p>
+                    At Universidad Autónoma de Chihuahua, I lead a dynamic team of highly skilled professors dedicated to fostering educational excellence. As a Computer Science educator, I guide students through intricate programming projects, often seeing them through to successful presentations at entrepreneurial fairs. My role extends to mentoring my peers, where I provide specialized training to PhD-level colleagues in programming and data science, with a focus on Python and its application in contemporary research methodologies.
+                </p>
+            </div>
+        </section>
+
+    <!-- Experience Images Section -->
+    <section id="experience-images-section" class="experience-images-section">
+        <div class="container">
+            <!-- Experience Card 1 -->
+            <input type="radio" name="slide" id="exp1" checked>
+            <label for="exp1" class="card" style="background-image: url('{% static 'VILLA-1.jpg' %}');"></label>
+                    <!-- Details for Experience 1 -->
+                </label>
+                <!-- Experience Card 2 -->
+                <input type="radio" name="slide" id="exp2">
+                <label for="exp2" class="card" style="background-image: url('{% static 'VILLA-4.jpg' %}');">
+                    <!-- Details for Experience 2 -->
+                </label>
+                <!-- Experience Card 3 -->
+                <input type="radio" name="slide" id="exp3">
+                <label for="exp3" class="card" style="background-image: url('{% static 'VILLA-17.jpg' %}');">
+                    <!-- Details for Experience 3 -->
+                </label>
+                <!-- Experience Card 4 -->
+                <input type="radio" name="slide" id="exp4">
+                <label for="exp4" class="card" style="background-image: url('{% static 'VILLA-18.jpg' %}');">
+                    <!-- Details for Experience 4 -->
+                </label>
+                <!-- Experience Card 5 -->
+                <input type="radio" name="slide" id="exp5">
+                <label for="exp5" class="card" style="background-image: url('{% static 'VILLA-21.jpg' %}');">
+                    <!-- Details for Experience 5 -->
+                </label>
+                <!-- Experience Card 6 -->
+                <input type="radio" name="slide" id="exp6">
+                <label for="exp6" class="card" style="background-image: url('{% static 'VILLA-37.jpg' %}');">
+                    <!-- Details for Experience 6 -->
+                </label>
+                <!-- Experience Card 7 -->
+                <input type="radio" name="slide" id="exp7">
+                <label for="exp7" class="card" style="background-image: url('{% static 'VILLA-42.jpg' %}');">
+                    <!-- Details for Experience 7 -->
+                </label>                                                                
+                <!-- Additional experience cards as needed -->
+            </div>
+        </div>
+    </section>
+
+<!-- Projects Section -->
+<section id="projects-section" class="projects-section">
+    <h2>Projects</h2>
+    <div class="projects-container">
+        <!-- Project Card 1 -->
+        <div class="project-card">
+            <img src="{% static 'dynamiclife.jpg' %}" alt="DynamicLife Online Store" class="project-image">
+            <div class="project-info">
+                <h3>DynamicLife</h3>
+                <p>
+                    DynamicLife is an e-commerce platform specializing in sports toys. The platform offers a multi-tier user system allowing browsing and purchasing for customers, product listing capabilities for sellers, and content moderation for appointed users. Features include real-time inventory management, ETA for orders, wishlist creation, secure checkout, and a cybersecurity dashboard for monitoring site activity.
+                </p>
+                <a href="https://dynamiclife.cavilla.repl.co/" class="project-link1">View Project</a>
+            </div>
+        </div>
+        <!-- Project Card 2 -->
+        <div class="project-card">
+            <img src="{% static 'CEEDS.jpg' %}" alt="Centro de Estudios Estrategicos y Desarollo Sustentable" class="project-image">
+            <div class="project-info">
+                <h3>CEEDS</h3>
+                <p>
+                    Centro de Estudios Estrategicos y Desarrollo Sustentable (CEEDS) is a pioneering web app in data science. It features a robust database visualizer for filtering information and generating detailed charts and graphics. Its standout component, an advanced machine learning algorithm, predicts future outcomes, essential for strategic planning and sustainable development.
+                </p>
+                <a href="" class="project-link2">View Project</a>
+            </div>
+        </div>
+        <!-- Additional project cards as needed -->
+    </div>
+</section>
+
+
+<!-- Contact Section -->
+<section id="contact-section" class="contact-section">
+    <h2>Contact</h2>
+    <div class="contact-info">
+        <p>Email: <a href="mailto:carlosavillah90@gmail.com" class="contact-link">carlosavillah90@gmail.com</a></p>
+        <p>Phone: <a href="tel:+526141837420" class="contact-link">+52 6141837420</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/carlosvilla90/" target="_blank" class="contact-link">carlosvilla90</a></p>
+        <p>GitHub: <a href="https://github.com/CVilla90" target="_blank" class="contact-link">CVilla90</a></p>
+    </div>
+    <!-- Additional contact options -->
+</section>
+
+
+</div>
+{% endblock %}

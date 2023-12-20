@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}My Portfolio{% endblock %}</title>
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <nav id="main-navbar" class="navbar">
+            <div class="navbar-container">
+                <a href="/" id="navbar-brand" class="brand"></a>
+                <ul id="navbar-links" class="nav-links">
+                    <li class="nav-item"><a href="" class="nav-link">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#about-section" class="nav-link dropdown-toggle">About Me</a>
+                        <div class="dropdown-menu">
+                            <a href="#education-section" class="dropdown-item">Education</a>
+                            <a href="#certifications-section" class="dropdown-item">Certifications</a>
+                            <a href="#experience-text-section" class="dropdown-item">Experience</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="#projects-section" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="#contact-section" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        {% block content %}
+        {% endblock %}
+    </main>    
+
+    <footer>
+        <!-- Footer content goes here -->
+    </footer>
+
+    {% block javascript %}
+    <script src="{% static 'js/base.js' %}"></script>
+    {% endblock %}
+</body>
+</html>
