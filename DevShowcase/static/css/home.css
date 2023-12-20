@@ -486,4 +486,17 @@ input[type="radio"]:checked + label::before {
         margin-bottom: 20px; /* Space between cards */
     }
 
+    .certifications {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .certification-col {
+        width: 100%; /* Each column takes full width */
+        margin-bottom: 20px; /* Add some space between stacked items */
+    }
+
+    #harvardx-col {
+        flex: 1; /* Reset the flex property for mobile */
+    }
 }
