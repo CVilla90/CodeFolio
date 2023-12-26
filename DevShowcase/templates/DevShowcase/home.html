@@ -55,7 +55,7 @@
         <div class="education-content">
             <h2>Education</h2>
             <p>
-                Ever since I was young, I've been the computer guy in my family. Often called upon to fix the family computer, I was likely the one who caused the issues in the first place (lol). While my early career took a turn towards management and political science, it was always my passion for computers that set me apart. Today, I've fully embraced this lifelong passion professionally, marrying my leadership abilities with my love for computer science.
+                Ever since I was young, I've been the computer guy in my family. Often called upon to fix the family computer (I was likely the one who caused the issues in the first place, lol). While my early career took a turn towards management and political science, it was always my passion for computers that set me apart. Today, I've fully embraced this lifelong passion professionally, marrying my leadership abilities with my love for computer science.
             </p>
         </div>
     </section>
@@ -167,23 +167,62 @@
             <img src="{% static 'dynamiclife.jpg' %}" alt="DynamicLife Online Store" class="project-image">
             <div class="project-info">
                 <h3>DynamicLife</h3>
-                <p>
-                    DynamicLife is an e-commerce platform specializing in sports toys. The platform offers a multi-tier user system allowing browsing and purchasing for customers, product listing capabilities for sellers, and content moderation for appointed users. Features include real-time inventory management, ETA for orders, wishlist creation, secure checkout, and a cybersecurity dashboard for monitoring site activity.
-                </p>
+                <!-- Tab Buttons -->
+                <div class="tab-buttons">
+                    <button class="tab-button" onclick="openTab(event, 'Description1')">Description</button>
+                    <button class="tab-button" onclick="openTab(event, 'Tech1')">Technologies</button>
+                </div>
+                <!-- Description Tab Content -->
+                <div id="Description1" class="tab-content">
+                    <p>
+                        DynamicLife is an e-commerce platform specializing in sports toys. The platform offers a multi-tier user system allowing browsing and purchasing for customers, product listing capabilities for sellers, and content moderation for appointed users. Features include real-time inventory management, ETA for orders, wishlist creation, secure checkout, and a cybersecurity dashboard for monitoring site activity.
+                    </p>
+                </div>
+                <!-- Technologies Tab Content -->
+                <div id="Tech1" class="tab-content" style="display: none;">
+                    <ul>
+                        <li>Django</li>
+                        <li>Python</li>
+                        <li>HTML/CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
                 <a href="https://dynamiclife.cavilla.repl.co/" class="project-link1">View Project</a>
             </div>
-        </div>
+        </div>        
         <!-- Project Card 2 -->
         <div class="project-card">
             <img src="{% static 'CEEDS.jpg' %}" alt="Centro de Estudios Estrategicos y Desarollo Sustentable" class="project-image">
             <div class="project-info">
                 <h3>CEEDS</h3>
-                <p>
-                    Centro de Estudios Estrategicos y Desarrollo Sustentable (CEEDS) is a pioneering web app in data science. It features a robust database visualizer for filtering information and generating detailed charts and graphics. Its standout component, an advanced machine learning algorithm, predicts future outcomes, essential for strategic planning and sustainable development.
-                </p>
-                <a href="" class="project-link2">View Project</a>
+                <!-- Tab Buttons -->
+                <div class="tab-buttons">
+                    <button class="tab-button" onclick="openTab(event, 'Description2')">Description</button>
+                    <button class="tab-button" onclick="openTab(event, 'Tech2')">Technologies</button>
+                </div>
+                <!-- Description Tab Content -->
+                <div id="Description2" class="tab-content">
+                    <p>
+                        Centro de Estudios Estrategicos y Desarrollo Sustentable (CEEDS) is a pioneering web app in data science. It features a robust database visualizer for filtering information and generating detailed charts and graphics. Its standout component, an advanced machine learning algorithm, predicts future outcomes, essential for strategic planning and sustainable development.
+                    </p>
+                </div>
+                <!-- Technologies Tab Content -->
+                <div id="Tech2" class="tab-content" style="display: none;">
+                    <ul>
+                        <li>Django</li>
+                        <li>Python</li>
+                        <li>HTML/CSS</li>
+                        <li>JavaScript</li>
+                        <li>Chart.js</li>
+                        <li>Machine Learning</li>
+                        <li>scikit-learn</li>
+                        <li>numpy</li>
+                        <li>Pandas</li>
+                    </ul>
+                </div>
+                <a href="https://ceeds.cavilla.repl.co/" class="project-link2">View Project</a>
             </div>
-        </div>
+        </div>  
         <!-- Additional project cards as needed -->
     </div>
 </section>
@@ -200,7 +239,34 @@
     </div>
     <!-- Additional contact options -->
 </section>
-
-
 </div>
+
+<script>
+function openTab(evt, tabName) {
+    var i, tabcontent, tabbuttons;
+
+    // Find the closest project card to the clicked tab
+    var projectCard = evt.currentTarget.closest('.project-card');
+
+    // Get all tab contents and buttons within this card
+    tabcontent = projectCard.getElementsByClassName("tab-content");
+    tabbuttons = projectCard.getElementsByClassName("tab-button");
+
+    var isTabAlreadyActive = evt.currentTarget.className.includes("active");
+
+    // Hide all tab contents and remove 'active' class from buttons in this card
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    for (i = 0; i < tabbuttons.length; i++) {
+        tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
+    }
+
+    // If the clicked tab was not already active, show it
+    if (!isTabAlreadyActive) {
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+}
+</script>
 {% endblock %}

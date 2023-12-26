@@ -335,19 +335,23 @@ input[type="radio"]:checked + label::before {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px; /* Spacing between cards */
+    align-items: flex-start; /* Align items independently */
+    gap: 20px;
 }
+
 
 .project-card {
     width: 300px; /* Or any suitable width */
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     border-radius: 10px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* This will space out the content */
-    height: 600px; /* Adjust this height as needed */
+    justify-content: space-between;
+    /* Removed the fixed height */
+    height: auto; /* Ensure cards can adjust their height */
+    margin-bottom: 20px; /* Add some space between cards */
 }
 
 .project-card:hover {
@@ -359,6 +363,7 @@ input[type="radio"]:checked + label::before {
     width: 100%;
     height: auto;
     display: block;
+    margin-bottom: 0; /* Reduce or remove bottom margin */
 }
 
 .project-info {
@@ -366,7 +371,7 @@ input[type="radio"]:checked + label::before {
 }
 
 .project-info h3 {
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .project-info p {
@@ -391,7 +396,6 @@ input[type="radio"]:checked + label::before {
     margin-top: auto; /* Pushes the link to the bottom */
 }
 
-
 .project-link1:hover {
     background-color: #5fbe00; /* New background color on hover */
     color: white; /* Text color change for better contrast */
@@ -402,6 +406,34 @@ input[type="radio"]:checked + label::before {
     background-color: #9500ac; /* New background color on hover */
     color: white; /* Text color change for better contrast */
     transform: scale(1.1); /* Slightly enlarge the link text on hover */
+}
+
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.tab-button {
+    background-color: inherit;
+    border: none;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.2); /* Added shadow */
+    border-radius: 5px; /* Rounded corners */
+    outline: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for background and shadow */
+}
+
+.tab-button:hover {
+    background-color: #ddd; /* Color change on hover */
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.3); /* Increased shadow on hover */
+}
+
+.tab-content {
+    display: none;
+    padding: 10px;
+    border-top: 1px solid #ddd;
 }
 
 /* 
@@ -442,61 +474,112 @@ input[type="radio"]:checked + label::before {
 */
 
 @media screen and (max-width: 768px) {
-    .about-section {
-        flex-direction: column; /* Stacks content vertically */
-    }
 
-    .about-text,
-    .about-image-container {
-        flex: none; /* Resets the flex grow/shrink */
-        width: 100%; /* Ensures full width */
-        margin-right: 0; /* Resets the margin */
-        padding-left: 0; /* Resets the padding */
-    }
+/* 
+    Responsive Design: About Me
+*/    
 
-    .experience-section .wrapper, .experience-section .container {
-        max-width: 100%;
-        overflow-x: hidden; /* Hide horizontal overflow */
-    }
-    
-    .education-section {
-        flex-direction: column; /* Stack elements vertically */
-        margin-top: 10px; /* Adjust top margin for mobile */
-        margin-bottom: 30px; /* Adjust bottom margin for mobile */
-    }
+.about-section {
+    display: flex;
+    flex-direction: column; /* Stacks content vertically */
+}
 
-    .education-image-container {
-        order: 2; /* Moves the image below the text on mobile */
-    }
+.about-text {
+    order: 2; /* Sets the text block to appear second */
+    flex: none; /* Resets the flex grow/shrink */
+    width: 100%; /* Ensures full width */
+    margin-right: 0; /* Resets the margin */
+}
 
-    .education-content {
-        order: 1; /* Moves the text above the image on mobile */
-    }
+.about-image-container {
+    order: 1; /* Sets the image block to appear first */
+    flex: none; /* Resets the flex grow/shrink */
+    width: 100%; /* Ensures full width */
+    padding-left: 0; /* Resets the padding */
+}
 
-    .education-image-container,
-    .education-content {
-        flex: none; /* Reset flex-grow settings */
-        width: 100%; /* Full width for both image and content */
-        padding: 10px 0; /* Add some vertical padding */
-    }
+/* 
+    Responsive Design: Education
+*/    
 
-    .project-card {
-        width: 80%; /* Full width of the container */
-        height: auto; /* Adjust height to content */
-        margin-bottom: 20px; /* Space between cards */
-    }
+.education-section {
+    flex-direction: column; /* Stack elements vertically */
+    margin-top: 10px; /* Adjust top margin for mobile */
+    margin-bottom: 30px; /* Adjust bottom margin for mobile */
+}
 
-    .certifications {
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center items horizontally */
-    }
+.education-image-container {
+    order: 2; /* Moves the image below the text on mobile */
+}
 
-    .certification-col {
-        width: 100%; /* Each column takes full width */
-        margin-bottom: 20px; /* Add some space between stacked items */
-    }
+.education-content {
+    order: 1; /* Moves the text above the image on mobile */
+}
 
-    #harvardx-col {
-        flex: 1; /* Reset the flex property for mobile */
-    }
+.education-image-container,
+.education-content {
+    flex: none; /* Reset flex-grow settings */
+    width: 100%; /* Full width for both image and content */
+    padding: 10px 0; /* Add some vertical padding */
+}
+
+/* 
+Responsive Experience Images section:
+*/
+
+.experience-images-section .container {
+    display: block; /* Continue with vertical stacking */
+    overflow-x: visible; /* Adjust overflow */
+    text-align: center; /* Center-align the elements */
+}
+
+.card {
+    width: 60%; /* Start off slimmer */
+    height: 60px; /* Initial slim height */
+    margin: 10px auto; /* Center the cards with automatic margins */
+    display: block; /* Display cards as block elements */
+    transition: height 0.3s ease; /* Smooth transition for height */
+}
+
+input:checked + label.card {
+    width: 80%; /* Expand width to 80% upon being clicked */
+    height: 200px; /* Expand height upon being clicked */
+}
+
+/* Adjust the position and size of the radio button label */
+input[type="radio"] + label::before {
+    position: absolute;
+    bottom: 10px; /* Adjust position to be more visible */
+    left: 50%;
+    transform: translateX(-50%); /* Center the label */
+}
+
+/* 
+    Responsive Design: Certifications
+*/    
+
+.certifications {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.certification-col {
+    width: 100%; /* Each column takes full width */
+    margin-bottom: 20px; /* Add some space between stacked items */
+}
+
+#harvardx-col {
+    flex: 1; /* Reset the flex property for mobile */
+}
+
+/* 
+Responsive Projects section:
+*/
+
+.project-card {
+    width: 80%; /* Full width of the container */
+    height: auto; /* Adjust height to content */
+    margin-bottom: 20px; /* Space between cards */
+}
+
 }
