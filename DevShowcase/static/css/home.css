@@ -361,9 +361,10 @@ input[type="radio"]:checked + label::before {
 
 .project-image {
     width: 100%;
-    height: auto;
+    max-height: 250px;
     display: block;
     margin-bottom: 0; /* Reduce or remove bottom margin */
+    overflow: hidden; /* Optional: Use if you want to hide content that overflows */
 }
 
 .project-info {
@@ -379,7 +380,7 @@ input[type="radio"]:checked + label::before {
     color: #666;
 }
 
-.project-link1, .project-link2 {
+.project-link1, .project-link2, .project-link3 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -403,6 +404,12 @@ input[type="radio"]:checked + label::before {
 }
 
 .project-link2:hover {
+    background-color: #539bff; /* New background color on hover */
+    color: white; /* Text color change for better contrast */
+    transform: scale(1.1); /* Slightly enlarge the link text on hover */
+}
+
+.project-link3:hover {
     background-color: #9500ac; /* New background color on hover */
     color: white; /* Text color change for better contrast */
     transform: scale(1.1); /* Slightly enlarge the link text on hover */
