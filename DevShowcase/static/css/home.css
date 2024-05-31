@@ -113,6 +113,7 @@
 
 .education-image-container {
     flex: 1;
+    padding-top: 10px; /* Reduced space between the image and text */
     padding-right: 10px; /* Reduced space between the image and text */
     order: 1; /* Keeps the image on the left on desktop */
 }
@@ -243,15 +244,54 @@
 .experience-text-section {
     margin-top: 30px; /* Space above the section */
     padding: 20px; /* Padding around the text */
+    background-color: #f9f9f9; /* Light background color for contrast */
     text-align: center; /* Center align the text within this section */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.experience-text-section h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
 }
 
 .experience-text-section .experience-content {
     max-width: 80%; /* Max width for optimal reading */
     margin: 0 auto; /* Center the content */
+    text-align: left; /* Left-align the inner content for readability */
     font-size: 1rem;
     line-height: 1.6;
     color: #333;    
+}
+
+.experience-text-section .experience-item {
+    margin-bottom: 30px; /* Space between items */
+    padding: 20px;
+    background: #fff; /* White background for contrast */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+}
+
+.experience-text-section .experience-item h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.experience-text-section .experience-role {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.experience-text-section ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.experience-text-section li {
+    margin-bottom: 10px;
 }
 
 /* 
@@ -317,6 +357,7 @@ input[type="radio"] + label::before {
 input[type="radio"]:checked + label::before {
     background-color: rgb(179, 179, 179);
 }
+
 
 /* 
     Projects Section 

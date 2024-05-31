@@ -30,7 +30,10 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['codefolio--cavilla.repl.co', 'codefolio.cavilla.repl.co', '127.0.0.1']
+ALLOWED_HOSTS = [ 
+    '127.0.0.1',
+    'codefolio.cavilla.repl.co',
+    ]
 
 
 # Application definition
